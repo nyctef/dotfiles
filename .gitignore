@@ -3,6 +3,7 @@
 .irssi/config
 id_rsa
 id_dsa
+known_hosts
 .tmux.conf
 .viminfo
 *_temp
