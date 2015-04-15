@@ -8,4 +8,8 @@ known_hosts
 .viminfo
 *_temp
 irclogs/
+.lesshst
+.rediscli_history
+.npm/
+git/
 
