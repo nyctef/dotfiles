@@ -1,0 +1,11 @@
+.bash_history
+.cache/
+.gitconfig
+.irssi/config
+id_rsa
+id_dsa
+.tmux.conf
+.viminfo
+*_temp
+irclogs/
+
