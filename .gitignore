@@ -12,4 +12,5 @@ irclogs/
 .rediscli_history
 .npm/
 git/
-
+.vim/
+tmp/
