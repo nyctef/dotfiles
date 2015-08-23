@@ -1,11 +1,33 @@
+.atom/compile-cache
 .bash_history
 .cache/
+.idlerc/
 .irssi/config
+.nuget/
+AppData/
+Contacts/
+Creative Cloud Files/
+Desktop/
+Documents/
+Downloads/
+Favorites/
+IntelGraphicsProfiles/
+Links/
+Music/
+NTUSER*
+ntuser*
+OneDrive/
+Pictures/
+Saved Games/
+Searches/
+Tracing/
+Videos/
 id_rsa
 id_dsa
 known_hosts
 .tmux.conf
 .viminfo
+_viminfo
 *_temp
 irclogs/
 .lesshst
