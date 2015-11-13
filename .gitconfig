@@ -29,6 +29,14 @@
   cob = checkout -b
   p = pull --ff-only
   puom = !git push -u origin `git rev-parse --abbrev-ref HEAD`
+  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+  purge = clean -d -x -f
+  ama = !git amend -a --no-edit
+  rhard = reset --hard
+  prebase = pull --rebase
+  oneline = log --pretty=oneline --abbrev-commit
+# delete-old-branches = !git branch -D `git branch --merged | grep -v '\*\|master' `
+  ignore-changes-to = update-index --assume-unchanged
 
 [filter "media"]
 	clean = git media clean %f
