@@ -37,6 +37,9 @@
   oneline = log --pretty=oneline --abbrev-commit
 # delete-old-branches = !git branch -D `git branch --merged | grep -v '\*\|master' `
   ignore-changes-to = update-index --assume-unchanged
+  branch-status = for-each-ref --format='%(refname:short) %(color:bold green)%(push:track)' refs/heads
+  brst = !git branch-status
+  unmerged-files = !git st --porcelain | grep UU | cut -c 4-
 
 [filter "media"]
 	clean = git media clean %f
