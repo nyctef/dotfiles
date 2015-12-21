@@ -36,3 +36,7 @@ irclogs/
 git/
 .vim/
 tmp/
+.dnx
+*.swp
+.config
+.android
