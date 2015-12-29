@@ -85,6 +85,41 @@ set smartcase               " .. unless uppercase letters are used in the regex.
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
+""" dump .swp and other backup files in .vim
+set backupdir=~/.vim//
+set directory=~/.vim//
+set undodir=~/.vim//
+
 au FileType python setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent
 au FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 smartindent
 
+" edit vimrc
+nnoremap <leader>ev :vsp $MYVIMRC<cr>
+" source vimrc
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" go to start of line
+nnoremap H ^
+" go to end of line
+nnoremap L $
+
+" another way to exit insert mode
+inoremap jk <esc>
+inoremap <esc> <nop>
+inoremap <c-c> <nop>
+
+" no arrow keys
+inoremap <left> <nop>
+nnoremap <left> <nop>
+inoremap <right> <nop>
+nnoremap <right> <nop>
+inoremap <down> <nop>
+nnoremap <down> <nop>
+inoremap <up> <nop>
+nnoremap <up> <nop>
+
+" clear search hilight
+nnoremap <leader>h :noh<cr>
+
+" some git aliases
+nnoremap <leader>st :!git status --untracked-files=all<cr>
