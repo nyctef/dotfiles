@@ -123,3 +123,21 @@ nnoremap <leader>h :noh<cr>
 
 " some git aliases
 nnoremap <leader>st :!git status --untracked-files=all<cr>
+
+" http://vim.wikia.com/wiki/Avoiding_the_%22Hit_ENTER_to_continue%22_prompts
+set cmdheight=3
+
+augroup csharp
+    autocmd!
+    " for cs files, write when leaving insert mode or pausing in normal mode
+    " for <updatetime> ms
+    autocmd FileType cs :autocmd csharp CursorHold,InsertLeave <buffer> silent write
+augroup END
+
+" trigger CursorHold and .swp file writes after 500ms
+set updatetime=500
+
+" set default window size for gvim
+if has("gui_running")
+    set lines=50 columns=200
+endif
