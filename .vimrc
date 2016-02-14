@@ -123,6 +123,7 @@ nnoremap <leader>h :noh<cr>
 
 " some git aliases
 nnoremap <leader>st :!git status --untracked-files=all<cr>
+nnoremap <leader>cia :silent !git cia<cr>
 
 " http://vim.wikia.com/wiki/Avoiding_the_%22Hit_ENTER_to_continue%22_prompts
 set cmdheight=3
