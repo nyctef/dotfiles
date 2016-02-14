@@ -1,23 +1,25 @@
 [user]
-	name = Nyctef
-    email = nyctef@nyctef.com
+  name = Nyctef
+  email = nyctef@nyctef.com
 
 [alias]
-  lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%h%C(reset) - %C(bold green)(%ar)%C(reset) %s%C(reset) %C(bold green)- %an%C(reset)%C(bold yellow)%d%C(reset)'
-  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(blue)%s%C(reset) %C(bold blue)- %an%C(reset)'
-  lg = !git lg1
+  lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%h%C(reset) - %C(bold green)(%ar)%C(reset) %s%C(reset) %C(bold green)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+  lg1 = !git lg -1
+  lga = !git lg --all
   st = status --untracked-files=all
   ci = commit --verbose
   cia = commit --verbose -a
   cip = commit --verbose -p
-  di = diff --word-diff
-  dc = diff --cached --word-diff
+  di = diff --color-words
+  dc = diff --cached --color-words
   amend = commit --amend
   fa = fetch --all
   fap = fetch --all --prune
   fomm = fetch origin master:master
+  fo = !git fetch origin $*:$*
+  fast = !git fa && git st
   dt = difftool --dir-diff
-  dlast = diff HEAD^ HEAD --word-diff
+  dlast = diff HEAD^ HEAD --color-words
   out = !git fetch && git lg FETCH_HEAD..
   outgoing = !git fetch && git lg FETCH_HEAD..
   in = !git fetch && git lg ..FETCH_HEAD
@@ -42,11 +44,11 @@
   unmerged-files = !git st --porcelain | grep UU | cut -c 4-
 
 [filter "media"]
-	clean = git media clean %f
-	smudge = git media smudge %f
-	required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
+  required = true
 [push]
-	default = simple
+  default = simple
 [core]
-	editor = gvim
-	whitespace = cr-at-eol
+  editor = gvim
+  whitespace = cr-at-eol
