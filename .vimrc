@@ -141,3 +141,9 @@ set updatetime=500
 if has("gui_running")
     set lines=50 columns=200
 endif
+
+" ignore spurious ^M characters in COMMIT_EDITMSG files
+augroup gitcommit
+    autocmd!
+    autocmd FileType gitcommit match Ignore /\r$/
+augroup END

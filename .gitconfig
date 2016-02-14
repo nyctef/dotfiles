@@ -47,3 +47,6 @@
 	required = true
 [push]
 	default = simple
+[core]
+	editor = gvim
+	whitespace = cr-at-eol
