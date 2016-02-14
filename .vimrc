@@ -108,16 +108,6 @@ inoremap jk <esc>
 inoremap <esc> <nop>
 inoremap <c-c> <nop>
 
-" no arrow keys
-inoremap <left> <nop>
-nnoremap <left> <nop>
-inoremap <right> <nop>
-nnoremap <right> <nop>
-inoremap <down> <nop>
-nnoremap <down> <nop>
-inoremap <up> <nop>
-nnoremap <up> <nop>
-
 " clear search hilight
 nnoremap <leader>h :noh<cr>
 
