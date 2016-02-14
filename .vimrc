@@ -143,6 +143,9 @@ if has("gui_running")
     set lines=50 columns=200
 endif
 
+" search for TODO and FIXME in pwd and list in quickfix window
+nnoremap <leader>d :vimgrep /TODO\\|FIXME/j **/*.cs \| :cw<cr>
+
 " ignore spurious ^M characters in COMMIT_EDITMSG files
 augroup gitcommit
     autocmd!
