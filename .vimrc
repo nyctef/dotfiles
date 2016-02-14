@@ -20,8 +20,6 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'scrooloose/syntastic'
 let g:syntastic_check_on_open=1
 
-Plugin 'OmniSharp/omnisharp-vim'
-
 Plugin 'tpope/vim-dispatch'
 
 Plugin 'kien/ctrlp.vim'
