@@ -42,6 +42,7 @@
   branch-status = for-each-ref --format='%(refname:short) %(color:bold green)%(push:track)' refs/heads
   brst = !git branch-status
   unmerged-files = !git st --porcelain | grep UU | cut -c 4-
+  unstage = reset HEAD
 
 [filter "media"]
   clean = git media clean %f
