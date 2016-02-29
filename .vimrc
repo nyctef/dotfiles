@@ -23,6 +23,7 @@ let g:syntastic_check_on_open=1
 Plugin 'tpope/vim-dispatch'
 
 Plugin 'kien/ctrlp.vim'
+let g:ctrlp_custom_ignore = 'node_modules'
 
 Plugin 'quanganhdo/grb256'
 
