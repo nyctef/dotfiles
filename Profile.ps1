@@ -97,3 +97,15 @@ function resetrepo {
 function touch($file) {
     out-file -append -encoding ascii $file
 }
+
+function pingslack($message) {
+    if (!$env:SLACK_API_TOKEN -or !$env:SLACK_USERNAME) {
+        write-warning "SLACK_API_TOKEN and SLACK_USERNAME need to be set to send slack messages"
+        return
+    }
+
+    $message = [Uri]::EscapeDataString($message)
+    $channel = [Uri]::EscapeDataString($env:SLACK_USERNAME)
+    $url = "https://slack.com/api/chat.postMessage?token=$($env:SLACK_API_TOKEN)&channel=$($channel)&text=$($message)&pretty=1"
+    Invoke-WebRequest $url
+}
