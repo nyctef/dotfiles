@@ -43,6 +43,7 @@
   brst = !git branch-status
   unmerged-files = !git st --porcelain | grep UU | cut -c 4-
   unstage = reset HEAD
+  fix-master = update-ref refs/heads/master origin/master HEAD
 
 [filter "media"]
   clean = git media clean %f
