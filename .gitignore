@@ -1,3 +1,5 @@
+.aws/credentials
+.AndroidStudio*
 .Rider10
 .v8flags*
 .yjp
@@ -7,6 +9,7 @@
 .atom/compile-cache
 .bash_history
 .cache/
+.gradle/
 .idlerc/
 .irssi/config
 .nuget/
