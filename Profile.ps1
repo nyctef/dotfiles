@@ -107,5 +107,5 @@ function pingslack($message) {
     $message = [Uri]::EscapeDataString($message)
     $channel = [Uri]::EscapeDataString($env:SLACK_USERNAME)
     $url = "https://slack.com/api/chat.postMessage?token=$($env:SLACK_API_TOKEN)&channel=$($channel)&text=$($message)&pretty=1"
-    Invoke-WebRequest $url
+    Invoke-RestMethod $url
 }

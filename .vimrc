@@ -19,8 +19,11 @@ Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'scrooloose/syntastic'
 let g:syntastic_check_on_open=1
+let g:syntastic_javascript_checkers = ['eslint']
 
 Plugin 'tpope/vim-dispatch'
+
+Plugin 'tpope/vim-commentary'
 
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_custom_ignore = {
