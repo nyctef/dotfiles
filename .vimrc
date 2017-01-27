@@ -23,7 +23,11 @@ let g:syntastic_check_on_open=1
 Plugin 'tpope/vim-dispatch'
 
 Plugin 'kien/ctrlp.vim'
-let g:ctrlp_custom_ignore = 'node_modules'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.git|\.hg|\.svn|node_modules|__pycache__|env)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 
 Plugin 'quanganhdo/grb256'
 
