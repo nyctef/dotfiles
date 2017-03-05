@@ -70,6 +70,7 @@ set shiftround              " rounds indent to a multiple of shiftwidth
 set matchpairs+=<:>         " show matching <> (html mainly) as well
 set foldmethod=indent       " allow us to fold on indents
 set foldlevel=99            " don't fold by default
+set splitright              " open vertical splits to the right
 
 """ indentation
 set tabstop=4               " <tab> inserts 4 spaces 
