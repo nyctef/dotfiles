@@ -50,4 +50,5 @@ tmp/
 .config
 .android
 _vimrc
+cache
 
