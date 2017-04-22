@@ -109,3 +109,9 @@ function pingslack($message) {
     $url = "https://slack.com/api/chat.postMessage?token=$($env:SLACK_API_TOKEN)&channel=$($channel)&text=$($message)&pretty=1"
     Invoke-RestMethod $url
 }
+
+function get-definition() {
+    (get-command $args).Definition
+}
+
+set-alias gd get-definition
