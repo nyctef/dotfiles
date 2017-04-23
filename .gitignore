@@ -34,7 +34,6 @@ Videos/
 id_rsa
 id_dsa
 known_hosts
-.tmux.conf
 .viminfo
 _viminfo
 *_temp
