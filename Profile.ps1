@@ -3,6 +3,7 @@
 function global:prompt {
     $realLASTEXITCODE = $LASTEXITCODE
 
+    Write-Host ('_' * (get-host).ui.rawui.windowsize.width) -nonewline
     Write-Host $pwd.ProviderPath -fore darkyellow -nonewline
     Write-Host " " -nonewline
     Write-Host "$(git rev-parse --abbrev-ref HEAD)" -nonewline
