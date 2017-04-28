@@ -111,6 +111,34 @@ function pingslack($message) {
     Invoke-RestMethod $url
 }
 
+function withslack() {
+  param([scriptblock] $block)
+
+  try {
+    invoke-command $block
+    pingslack 'done'
+  }
+  catch {
+    pingslack $_
+    throw
+  }
+}
+
+function infolder() {
+  param(
+  $folder,
+  [scriptblock] $block
+  )
+
+  try {
+    push-location $folder
+    invoke-command $block
+  }
+  finally {
+    pop-location
+  }
+}
+
 function get-definition() {
     (get-command $args).Definition
 }
