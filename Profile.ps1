@@ -89,6 +89,7 @@ function inspect {
 
 function fixforegroundcolour {
     [console]::ForegroundColor = 'gray'
+    [console]::BackgroundColor = 'black'
 }
 
 function resetrepo {
