@@ -56,3 +56,6 @@ cache
 .node_repl_history
 .octave_hist
 .vagrant.d
+.adalcache
+.devaccounts
+.extaccounts
