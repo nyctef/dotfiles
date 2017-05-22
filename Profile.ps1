@@ -64,6 +64,14 @@ function global:runat($time, $toExecute) {
     $job
 }
 
+function global:sleepuntil($time, $toExecute) {
+    $seconds = (New-TimeSpan -End $time).TotalSeconds
+    if ($seconds -le 1) { throw "$time is in the past" }
+    "Sleeping for $seconds seconds and then running `{ $toExecute `}"
+    Sleep -Seconds $seconds
+    & $toExecute
+}
+
 function global:deleteuntrackedfiles() {
     & git status --porcelain --untracked-files=all | grep '^??' | cut -c 4- | remove-item
 }
