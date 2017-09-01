@@ -19,7 +19,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'vim-syntastic/syntastic'
 let g:syntastic_check_on_open = 0
-let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_checkers = ['eslint', 'tsuquyomi']
 let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 Plugin 'tpope/vim-dispatch'
@@ -108,6 +108,8 @@ set wildignorecase          " ignore case when completing ex commands
 set wildmenu                " enable a menu displaying possible completions
 set wildmode=longest:full,list:full " prefer to match the first common substring
 
+set confirm                 " ask before abandoning unsaved buffers instead of erroring
+
 """ dump .swp and other backup files in .vim
 set backupdir=~/.vim//
 set directory=~/.vim//
@@ -146,7 +148,7 @@ augroup END
 
 augroup javascript
     autocmd!
-    autocmd BufEnter *.tsx set filetype=javascript
+    autocmd BufEnter *.tsx set syntax=javascript
 augroup END
 
 " trigger CursorHold and .swp file writes after 500ms
