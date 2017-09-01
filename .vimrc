@@ -17,9 +17,10 @@ Plugin 'pangloss/vim-javascript'
 
 Plugin 'nathanaelkane/vim-indent-guides'
 
-Plugin 'scrooloose/syntastic'
-let g:syntastic_check_on_open=1
+Plugin 'vim-syntastic/syntastic'
+let g:syntastic_check_on_open = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 Plugin 'tpope/vim-dispatch'
 
@@ -31,8 +32,18 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
+let g:ctrlp_root_markers = ['package.json']
 
 Plugin 'quanganhdo/grb256'
+
+Plugin 'editorconfig/editorconfig-vim'
+
+" tsuquyomi: connect to typescript server for ide features
+Plugin 'Quramy/tsuquyomi'
+nnoremap <C-b> :TsuDefinition<CR>
+nnoremap <M-b> :TsuReferences<CR>
+" use syntastic instead
+let g:tsuquyomi_disable_quickfix = 1
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -92,6 +103,11 @@ set smartcase               " .. unless uppercase letters are used in the regex.
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
+""" ex-command completion
+set wildignorecase          " ignore case when completing ex commands
+set wildmenu                " enable a menu displaying possible completions
+set wildmode=longest:full,list:full " prefer to match the first common substring
+
 """ dump .swp and other backup files in .vim
 set backupdir=~/.vim//
 set directory=~/.vim//
@@ -128,6 +144,11 @@ augroup csharp
     autocmd FileType cs :autocmd csharp CursorHold,InsertLeave <buffer> silent write
 augroup END
 
+augroup javascript
+    autocmd!
+    autocmd BufEnter *.tsx set filetype=javascript
+augroup END
+
 " trigger CursorHold and .swp file writes after 500ms
 set updatetime=500
 
@@ -139,6 +160,9 @@ endif
 " search for TODO and FIXME in pwd and list in quickfix window
 nnoremap <leader>d :vimgrep /TODO\\|FIXME/j **/*.cs \| :cw<cr>
 
+" ctrl-minus should go back like ctrl-o does
+nnoremap  
+
 " ignore spurious ^M characters in COMMIT_EDITMSG files
 augroup gitcommit
     autocmd!
@@ -146,6 +170,9 @@ augroup gitcommit
 augroup END
 
 if has("gui_running")
+
+  set winaltkeys=no " don't allow alt key to be used for gvim menus
+
   if has("gui_gtk2")
     set guifont=Inconsolata\ 12
   elseif has("gui_macvim")
