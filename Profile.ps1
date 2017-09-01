@@ -91,6 +91,19 @@ function Add-TimeStamp {
     }
 } 
 
+function Add-Times {
+    begin {
+        write-host "Starting at $(get-date)"
+    }
+    process {
+        $input | % { "$(get-date)`t$($_)"; }
+    }
+    end {
+       write-host "Ending at $(get-date)"
+       write-host "Total time: $($sw.Elapsed)"
+    }
+} 
+
 function inspect {
     & "C:\Program Files (x86)\Windows Kits\10\bin\x64\inspect.exe"
 }
@@ -153,3 +166,15 @@ function get-definition() {
 }
 
 set-alias gd get-definition
+
+# experimental: ideally this would be a nice way to pick a command from history
+# annoyingly hitting cancel or close on the out-gridview call still sends a value down the pipeline;
+# we always end up running *something* from the history even if we didn't want to
+function hx() {
+  get-history | sort -descending | out-gridview -outputmode single | invoke-history
+}
+
+# try to run a .sh file by running all of the commands in it
+function sh($filename) {
+  cat $filename | where { $_.trim() } | iex
+}
