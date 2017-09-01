@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--perforce-xml-version=1.0-->
+<PropertyList varName="ApplicationSettings" IsManaged="TRUE">
+ <String varName="CharSet">none</String>
+ <String varName="DiffOption">dl</String>
+ <Font varName="Font">
+  <family>Courier New</family>
+  <pointSize>10</pointSize>
+  <weight>true</weight>
+  <italic>false</italic>
+ </Font>
+ <Bool varName="InlineDiffsEnabled">true</Bool>
+ <String varName="LineEnding">Windows</String>
+ <Bool varName="ShowTabsSpaces">false</Bool>
+ <Bool varName="TabInsertsSpaces">false</Bool>
+ <Int varName="TabWidth">4</Int>
+</PropertyList>
