@@ -1,4 +1,5 @@
 .aws/credentials
+.azure
 .AndroidStudio*
 .Rider10
 .v8flags*
@@ -9,6 +10,8 @@
 .atom/compile-cache
 .bash_history
 .cache/
+.docker/
+.electron/
 .gradle/
 .idlerc/
 .irssi/config
