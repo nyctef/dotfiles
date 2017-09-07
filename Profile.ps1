@@ -186,3 +186,5 @@ function get-type($thing) {
 
 set-alias gt get-type
 
+function ge { gitextensions }
+function gec { gitextensions commit }
