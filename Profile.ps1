@@ -73,7 +73,7 @@ function global:sleepuntil($time, $toExecute) {
 }
 
 function global:deleteuntrackedfiles() {
-    & git status --porcelain --untracked-files=all | grep '^??' | cut -c 4- | remove-item
+    & git status --porcelain --untracked-files=all | grep '^??' | cut -c 4- | remove-item -force
 }
 
 # cut-down version of http://blogs.msdn.com/b/timid/archive/2013/03/20/adding-a-timestamp.aspx
