@@ -46,6 +46,7 @@
   unstage = reset HEAD
   fix-master = update-ref refs/heads/master origin/master HEAD
   ch = cherry-pick
+  rcon = rebase --continue
 
 [filter "media"]
   clean = git media clean %f
