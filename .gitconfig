@@ -26,7 +26,7 @@
   incoming = !git fetch && git lg ..FETCH_HEAD
   outin = !git fetch && echo 'out:' && git lg FETCH_HEAD.. && echo 'in:' && git lg ..FETCH_HEAD
   aa = add -A
-  addw = !git diff -b | git apply --ignore-whitespace --cached
+  addw = !bash -c 'git diff -b | git apply --ignore-whitespace --cached'
   co = checkout
   cob = checkout -b
   p = pull --ff-only
