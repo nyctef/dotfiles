@@ -178,3 +178,11 @@ function hx() {
 function sh($filename) {
   cat $filename | where { $_.trim() } | iex
 }
+
+function get-type($thing) {
+    if ($thing -eq $null) { return '$null' }
+    return $thing.GetType().Name
+}
+
+set-alias gt get-type
+
