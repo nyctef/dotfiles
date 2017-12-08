@@ -18,7 +18,9 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'vim-syntastic/syntastic'
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 0 " don't immediately check files on open
+let g:syntastic_always_populate_loc_list = 1 " always dump errors into loc list
+let g:syntastic_auto_loc_list = 1 " auto open and close loc list
 let g:syntastic_javascript_checkers = ['eslint', 'tsuquyomi']
 let g:syntastic_typescript_checkers = ['tsuquyomi']
 
@@ -42,6 +44,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'Quramy/tsuquyomi'
 nnoremap <C-b> :TsuDefinition<CR>
 nnoremap <M-b> :TsuReferences<CR>
+nnoremap <leader>tf :TsuQuickFix<CR>
 " use syntastic instead
 let g:tsuquyomi_disable_quickfix = 1
 
@@ -136,6 +139,10 @@ inoremap <c-c> <nop>
 " clear search hilight
 nnoremap <leader>h :noh<cr>
 
+" jump around in location list
+nnoremap <M-PageDown> :lnext<cr>
+nnoremap <M-PageUp> :lprev<cr>
+
 " http://vim.wikia.com/wiki/Avoiding_the_%22Hit_ENTER_to_continue%22_prompts
 set cmdheight=3
 
@@ -149,6 +156,7 @@ augroup END
 augroup javascript
     autocmd!
     autocmd BufEnter *.tsx set syntax=javascript
+    autocmd BufEnter *.ts set syntax=javascript
 augroup END
 
 " trigger CursorHold and .swp file writes after 500ms
