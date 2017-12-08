@@ -62,3 +62,8 @@ cache
 .adalcache
 .devaccounts
 .extaccounts
+.vscode/extensions
+*.dotnetUserLevelCache
+desktop.ini
+MicrosoftEdgeBackups
+*.yarnrc
