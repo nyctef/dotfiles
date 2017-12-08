@@ -57,3 +57,4 @@
 [core]
   editor = gvim
   whitespace = cr-at-eol
+	autocrlf = false
