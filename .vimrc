@@ -48,6 +48,8 @@ nnoremap <leader>tf :TsuQuickFix<CR>
 " use syntastic instead
 let g:tsuquyomi_disable_quickfix = 1
 
+Plugin 'elixir-editors/vim-elixir'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
