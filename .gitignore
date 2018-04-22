@@ -67,3 +67,7 @@ cache
 desktop.ini
 MicrosoftEdgeBackups
 *.yarnrc
+
+*.dotnetFirstUseSentinel
+.kube/config
+.recently-used.xbel

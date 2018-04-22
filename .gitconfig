@@ -48,6 +48,7 @@
   ch = cherry-pick
   rcon = rebase --continue
 
+	force-push = push --force-with-lease
 [filter "media"]
   clean = git media clean %f
   smudge = git media smudge %f
