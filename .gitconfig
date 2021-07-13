@@ -47,8 +47,9 @@
   fix-master = update-ref refs/heads/master origin/master HEAD
   ch = cherry-pick
   rcon = rebase --continue
+  force-push = push --force-with-lease
+  rhu = reset --hard @{upstream}
 
-	force-push = push --force-with-lease
 [filter "media"]
   clean = git media clean %f
   smudge = git media smudge %f
@@ -58,4 +59,4 @@
 [core]
   editor = gvim
   whitespace = cr-at-eol
-	autocrlf = false
+  autocrlf = false
