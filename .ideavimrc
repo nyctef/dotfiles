@@ -1,0 +1,13 @@
+map <leader>p <Action>(GotoFile)
+map <leader>t <Action>(GotoSymbol)
+map <leader>ss <Action>(SelectInProjectView)
+map <leader>vo <Action>(RiderShowValueOrigin)
+map <leader>vd <Action>(RiderShowValueDestination)
+map <leader>' <Action>(ActivateTerminalToolWindow)
+
+set ideajoin
+set surround
+
+set incsearch
+set ignorecase
+set smartcase
