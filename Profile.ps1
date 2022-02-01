@@ -188,3 +188,9 @@ set-alias gt get-type
 
 function ge { gitextensions }
 function gec { gitextensions commit }
+
+function reset { [console]::ResetColor() }
+
+function dnr { clear; dotnet restore }
+function dnb { clear; dotnet build --no-restore }
+function dnt { clear; dotnet test --no-restore }
