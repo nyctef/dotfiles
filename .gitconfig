@@ -49,6 +49,8 @@
   rcon = rebase --continue
   force-push = push --force-with-lease
   rhu = reset --hard @{upstream}
+  mt = mergetool
+  delete-branch = !"f() { git branch -D $@; git push origin --delete $@; }; f"
 
 [filter "media"]
   clean = git media clean %f
