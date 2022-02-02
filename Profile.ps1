@@ -191,6 +191,6 @@ function gec { gitextensions commit }
 
 function reset { [console]::ResetColor() }
 
-function dnr { clear; dotnet restore }
-function dnb { clear; dotnet build --no-restore }
-function dnt { clear; dotnet test --no-restore }
+function dnr { clear; reset; dotnet restore }
+function dnb { clear; reset; dotnet build --no-restore }
+function dnt { clear; reset; dotnet test --no-restore }
