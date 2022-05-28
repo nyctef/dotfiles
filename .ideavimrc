@@ -5,6 +5,26 @@ map <leader>vo <Action>(RiderShowValueOrigin)
 map <leader>vd <Action>(RiderShowValueDestination)
 map <leader>' <Action>(ActivateTerminalToolWindow)
 
+map <leader>ne <Action>(ReSharperGotoNextErrorInSolution)
+
+map <C-S> <Action>(SaveAll)
+
+map <C-B> <Action>(GotoDeclaration)
+map <C-S-B> <Action>(ReSharperGotoImplementation)
+
+map <leader>rt <Action>(RiderUnitTestRepeatPreviousRunAction)
+
+" in visual/select mode only, map ctrl-c to copy
+vnoremap <C-c> "*y
+" map ctrl-v to paste
+nnoremap <C-v> "*p
+vnoremap <C-v> "*p
+inoremap <C-v> <C-r>*
+
+" use _ (blackhole register) to actually delete text
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
 set ideajoin
 set surround
 
