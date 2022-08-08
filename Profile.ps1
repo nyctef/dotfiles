@@ -194,3 +194,19 @@ function reset { [console]::ResetColor() }
 function dnr { clear; reset; dotnet restore }
 function dnb { clear; reset; dotnet build --no-restore }
 function dnt { clear; reset; dotnet test --no-restore }
+
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+
+function ghpr {
+    $SelectedPrLine = @(gh pr list | fzf)
+    if ($SelectedPrLine.count -le 0)
+    {
+        write-host "No PR selected"
+        return
+    }
+    
+    $SelectedPrLine = $SelectedPrLine[0]
+    $SelectedPrNumber = $SelectedPrLine.split("`t")[0]
+    
+    gh pr checkout $SelectedPrNumber
+}
