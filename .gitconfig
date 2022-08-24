@@ -16,6 +16,7 @@
   fa = fetch --all
   fap = fetch --all --prune
   fomm = fetch origin master:master
+  fom = fetch origin main:main
   fo = !git fetch origin $*:$*
   fast = !git fa && git st
   dt = difftool --dir-diff
